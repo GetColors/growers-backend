@@ -1,0 +1,19 @@
+{
+  "name": "growers-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GetColors/growers-backend.git"
+  },
+  "author": "Camilo Alaniz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GetColors/growers-backend/issues"
+  },
+  "homepage": "https://github.com/GetColors/growers-backend#readme"
+}
