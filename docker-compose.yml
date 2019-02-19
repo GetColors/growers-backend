@@ -1,0 +1,22 @@
+version: "3"
+services:
+  api:
+    build:
+      context: .
+      dockerfile: docker/nodejs/Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+    links:
+      - postgresql
+
+  postgresql:
+    image: postgres:11-alpine
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: '00000000'
+    volumes:
+      - ~/docker/postgresql/data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"

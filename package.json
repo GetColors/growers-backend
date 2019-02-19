@@ -1,19 +1,22 @@
 {
-  "name": "growers-backend",
+  "name": "notifications-api",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "notification api service",
+  "main": "app.js",
+  "engines": {
+    "node": "8.10"
+  },
   "scripts": {
+    "start": "node app.js",
     "test": "test"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/GetColors/growers-backend.git"
-  },
   "author": "Camilo Alaniz",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/GetColors/growers-backend/issues"
-  },
-  "homepage": "https://github.com/GetColors/growers-backend#readme"
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.2",
+    "morgan": "^1.9.1"
+  }
 }
