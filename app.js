@@ -12,12 +12,14 @@ var pg = require('knex')({
     searchPath: ['knex', 'public'],
 });
 
-app.use(express.json());
-app.use('/',router);
 app.use(cors({
     'Access-Control-Allow-Origin':'*',
     'Content-Type':'application/json',
     'Access-Control-Allow-Headers':'[Content-Type, Authorization]'
 }));
+
+app.use(express.json());
+app.use('/',router);
+
 
 app.listen(port, () => console.log(`App listening from port ${port}`));
