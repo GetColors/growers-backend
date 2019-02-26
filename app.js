@@ -1,25 +1,23 @@
-require('dotenv').config()
+require('dotenv').config();
 
-const express = require("express");
+const express =  require('express');
+const parser = require('body-parser');
+const helmet = require('helmet');
+const morgan = require('morgan');
+
 const app = express();
-const cors = require('cors')
-const router = require('./routes');
-const port = process.env.PORT || 3000;
 
-var pg = require('knex')({
-    client: 'pg',
-    connection: process.env.PG_CONNECTION_STRING,
-    searchPath: ['knex', 'public'],
+app.use(helmet());
+app.use(morgan('dev'));
+app.use(parser.json());
+
+app.get('/', (req, res) => {
+  res.json({
+    message : 'Welcome to growers backend',
+    status : 'Ready!',
+  });
 });
 
-app.use(cors({
-    'Access-Control-Allow-Origin':'*',
-    'Content-Type':'application/json',
-    'Access-Control-Allow-Headers':'[Content-Type, Authorization]'
-}));
+app.use('', require('./src/contexts/index'));
 
-app.use(express.json());
-app.use('/',router);
-
-
-app.listen(port, () => console.log(`App listening from port ${port}`));
+module.exports = app;
