@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 
-app.use('/crops', require('./routes'));
+const routes = require('./routes');
+
+app.use('/crops', routes);
 
 module.exports = app;

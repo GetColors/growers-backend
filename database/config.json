@@ -1,0 +1,9 @@
+{
+  "type": "postgres",
+  "host": "postgresql",
+  "port": 5432,
+  "username": "admin",
+  "password": "00000000",
+  "database": "growers",
+  "synchronize": true
+}

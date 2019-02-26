@@ -4,7 +4,7 @@
   "description": "backend for growers application",
   "main": "app.js",
   "scripts": {
-    "start": "node bin/www.js",
+    "start": "bin/www",
     "test": "test"
   },
   "repository": {
@@ -25,6 +25,10 @@
     "helmet": "^3.15.1",
     "morgan": "^1.9.1",
     "pg": "^7.8.1",
-    "sequelize": "^4.42.0"
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.2.14"
+  },
+  "devDependencies": {
+    "@types/node": "^11.9.5"
   }
 }

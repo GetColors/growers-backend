@@ -1,0 +1,25 @@
+version: '3'
+services:
+  api:
+    build:
+      context: .
+      dockerfile: docker/nodejs/Dockerfile
+    ports:
+      - '3000:3000'
+    volumes:
+      - .:/app
+    links:
+      - postgresql
+
+  postgresql:
+    image: postgres:11-alpine
+    restart: always
+    environment:
+      POSTGRES_DB: growers
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+    ports:
+      - '5432:5432'
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+      - ./database/growers.sql:/docker-entrypoint-initdb.d/growers.sql
