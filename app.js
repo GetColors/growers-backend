@@ -24,7 +24,7 @@ app.use(parser.json());
 
 app.get('/', (req, res) => {
   res.json({
-    message : 'Welcome to growers backend',
+    message : 'Welcome to growers backend.',
     status : 'Ready!',
   });
 });
